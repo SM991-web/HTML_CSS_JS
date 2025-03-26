@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple List</title>
+</head>
+<body>
+    <center>
+    <input id="inputItem">
+    <button onclick="list.innerHTML += `<li>${inputItem.value} <button onclick=this.parentElement.remove()>remove</button></li>`; inputItem.value=''">Add</button>
+
+    <ul id="list" style="list-style: none;"></ul>
+</center>
+</body>
+</html>

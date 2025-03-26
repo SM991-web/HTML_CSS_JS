@@ -1,0 +1,120 @@
+<!-- Calculator using  HTML CSS -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <style>
+        .calculator {
+            width: 200px;
+            margin: 100px auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            }
+        button {
+            padding: 20px;
+            font-size: 18px;
+            cursor: pointer;
+            }
+        input {
+            grid-column: span 4;
+            padding: 10px;
+            font-size: 20px;
+            text-align: right;
+            }
+
+    </style>
+</head>
+<body>
+    <h2>Simple Calculator</h2>
+    <form name="calc">
+        <input type="text" name="display" disabled><br><br>
+        <button type="button" onclick="calc.display.value += '1'">1</button>
+        <button type="button" onclick="calc.display.value += '2'">2</button>
+        <button type="button" onclick="calc.display.value += '3'">3</button>
+        <button type="button" onclick="calc.display.value += '4'">4</button><br>
+        
+        <button type="button" onclick="calc.display.value += '5'">5</button>
+        <button type="button" onclick="calc.display.value += '6'">6</button>
+        <button type="button" onclick="calc.display.value += '7'">7</button>
+        <button type="button" onclick="calc.display.value += '8'">8</button><br>
+        
+        <button type="button" onclick="calc.display.value += '9'">9</button>
+        <button type="button" onclick="calc.display.value += '0'">0</button>
+        <button type="button" onclick="calc.display.value += '+'">+</button>
+        <button type="button" onclick="calc.display.value += '-'">-</button><br>
+        
+    </form>
+</body>
+</html>
+
+<!-- Calculator using  HTML CSS JS-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+</head>
+<body>
+    <h2>Simple Calculator</h2>
+    <form name="calc">
+        <input type="text" name="display" disabled><br><br>
+        <button type="button" onclick="calc.display.value += '1'">1</button>
+        <button type="button" onclick="calc.display.value += '2'">2</button>
+        <button type="button" onclick="calc.display.value += '3'">3</button>
+        <button type="button" onclick="calc.display.value += '4'">4</button><br>
+        
+        <button type="button" onclick="calc.display.value += '5'">5</button>
+        <button type="button" onclick="calc.display.value += '6'">6</button>
+        <button type="button" onclick="calc.display.value += '7'">7</button>
+        <button type="button" onclick="calc.display.value += '8'">8</button><br>
+        
+        <button type="button" onclick="calc.display.value += '9'">9</button>
+        <button type="button" onclick="calc.display.value += '0'">0</button>
+        <button type="button" onclick="calc.display.value += '+'">+</button>
+        <button type="button" onclick="calc.display.value += '-'">-</button><br>
+        
+        <button type="button" onclick="calc.display.value += ''"></button>
+        <button type="button" onclick="calc.display.value += '/'">/</button>
+        <button type="button" onclick="calc.display.value = ''">C</button>
+        <button type="button" onclick="calc.display.value = eval(calc.display.value)">=</button>
+    </form>
+    <script>
+        let display = document.getElementById("display");
+        let currentInput = "";
+
+        function appendNumber(number) {
+        currentInput += number;
+        display.value = currentInput;
+        }
+
+        function appendOperator(operator) {
+        currentInput += " " + operator + " ";
+        display.value = currentInput;
+        }
+
+        function clearDisplay() {
+        currentInput = "";
+        display.value = currentInput;
+        }
+
+        function calculate() {
+        try {
+            currentInput = eval(currentInput).toString();
+            display.value = currentInput;
+        } catch (error) {
+            display.value = "Error";
+        }
+        }
+    </script>
+</body>
+</html>
+
+
+
+
